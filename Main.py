@@ -1,5 +1,4 @@
-print("Hello VS")
-from course import Course, InvalidMarksError, load_course
+from Course import Course, InvalidMarksError, load_course
 
 # Task 2 test
 c = Course("Programming for AI")
@@ -50,3 +49,16 @@ students = [Student("Ali", 72), Student("Sara", 45), Student("Omar", 50)]
 
 for s in students:
     print(s)
+
+
+
+
+c = Course("X")
+c.add_student("Ali", 88)
+c.remove_student("Ali")
+print(len(c))
+
+try:
+    c.remove_student("Zara")
+except KeyError as e:
+    print("KeyError:", e)    

@@ -7,6 +7,13 @@ class Course:
         self.name = name
         self.marks = {}
 
+    def remove_student(self, name: str) -> None:
+        """Remove a student, or raise KeyError if missing."""
+        if name not in self.marks:
+            raise KeyError(f"No student named {name}")
+        del self.marks[name]   
+#tak 3: remove student feature
+
     def add_student(self, student, marks):
         if not 0 <= marks <= 100:
             raise InvalidMarksError(f"Invalid marks for {student}: {marks}")
